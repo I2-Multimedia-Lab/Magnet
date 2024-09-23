@@ -1,0 +1,12 @@
+accelerate==0.18.0
+diffusers==0.21.4
+pytorch-lightning==1.5
+opencv-contrib-python
+nltk
+numpy
+stanza
+torch
+torchaudio
+torchvision
+tqdm
+transformers
