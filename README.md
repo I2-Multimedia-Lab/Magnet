@@ -12,7 +12,7 @@
 <img src="./figures/magnet_workflow.jpg" width="800px">
 
 ### 🌟 Key Features
-1. Analyze and explore the CLIP text encoder in depth, highlight the context issue of padding embeddings;
+1. Analyze and explore the CLIP text encoder in depth, highlighting the contextual issue of padding embeddings.
 2. Improve text alignment by applying positive and negative binding vectors on object embeddings, with negligible cost.
 3. Plug-and-play to various T2I models and controlling methods, e.g., ControlNet.
 
