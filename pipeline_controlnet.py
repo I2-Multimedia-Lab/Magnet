@@ -44,8 +44,8 @@ class MagnetSDControlNetPipeline(StableDiffusionControlNetPipeline):
         self,
         prompt, 
         pairs=None,
-        alphas=[1, 1],
-        betas=[0.5, 0.5],
+        alphas=None,
+        betas=None,
         K=5,
         alpha_lambda=0.6,
         use_neg = True,
@@ -80,12 +80,18 @@ class MagnetSDControlNetPipeline(StableDiffusionControlNetPipeline):
             omega = F.cosine_similarity(concept_embeds[:, concept_eid+sd_2].detach().cpu(), concept_embeds[:, -1].detach().cpu())
 
             if use_pos:
-                alpha = float(torch.exp(alpha_lambda-omega))
+                if alphas is not None:
+                    alpha = alphas[pid]
+                else:
+                    alpha = float(torch.exp(alpha_lambda-omega))
             else:
                 alpha = 0
 
             if use_neg:
-                beta = float(1-omega**2)
+                if betas is not None:
+                    beta = betas[pid]
+                else:
+                    beta = float(1-omega**2)
             else:
                 beta = 0
             # print(alpha, beta)
