@@ -9,12 +9,9 @@
 [Paper]()
 
 <p><B>We propose Magnet, a training-free approach that improves attribute binding by manipulating object embeddings, enhancing disentanglement within the textual space.</B></p>
-
+<img src="./figures/magnet_workflow.jpg" width="800px">
 </div>
 
-<div align="left">
-
-<img src="./figures/magnet_workflow.jpg" width="800px">
 
 ### 🌟 Key Features
 1. In-depth analysis and exploration of the CLIP text encoder, highlighting the context issue of padding embeddings;
@@ -45,4 +42,4 @@ You can also try [ControlNet](https://huggingface.co/lllyasviel/sd-controlnet-de
 - [x] Extend to more T2I models.
 - [x] Extend to controlling approaches.
 
-</div>
+
