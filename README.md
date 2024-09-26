@@ -1,5 +1,6 @@
-<div align="left">
+<div align="center">
 <h1>Magnet: We Never Know How Text-to-Image Diffusion Models Work, Until We Learn How Vision-Language Models Function</h1>
+
 
 [Chenyi Zhuang](https://chenyi-zhuang.github.io/), Ying Hu, Pan Gao
 
@@ -8,6 +9,10 @@
 [Paper]()
 
 <p><B>We propose Magnet, a training-free approach that improves attribute binding by manipulating object embeddings, enhancing disentanglement within the textual space.</B></p>
+
+</div>
+
+<div align="left">
 
 <img src="./figures/magnet_workflow.jpg" width="800px">
 
