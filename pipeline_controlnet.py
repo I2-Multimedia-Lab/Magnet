@@ -44,14 +44,14 @@ class MagnetSDControlNetPipeline(StableDiffusionControlNetPipeline):
         self,
         prompt, 
         pairs=None,
-        alphas=[1, 1],
-        betas=[0.5, 0.5],
+        alphas=None,
+        betas=None,
         K=5,
         alpha_lambda=0.6,
-        use_neg = True,
-        use_pos = True,
-        neighbor = "feature",
-        sd_2 = False
+        use_neg=True,
+        use_pos=True,
+        neighbor="feature",
+        sd_2=False
     ):
         assert len(self.candidates) == self.candidate_embs.shape[0]
 
@@ -60,7 +60,7 @@ class MagnetSDControlNetPipeline(StableDiffusionControlNetPipeline):
         text_inds = self.tokenizer.encode(prompt)
         self.eot_index = len(text_inds) - 1
 
-        if pairs == None:
+        if pairs is None:
             pairs = get_pairs(prompt, self.parser)
             # print('Extracted Dependency : \n', pairs)
 
@@ -80,12 +80,18 @@ class MagnetSDControlNetPipeline(StableDiffusionControlNetPipeline):
             omega = F.cosine_similarity(concept_embeds[:, concept_eid+sd_2].detach().cpu(), concept_embeds[:, -1].detach().cpu())
 
             if use_pos:
-                alpha = float(torch.exp(alpha_lambda-omega))
+                if alphas is None:
+                    alpha = float(torch.exp(alpha_lambda-omega))
+                else:
+                    alpha = alphas[pid]
             else:
                 alpha = 0
 
             if use_neg:
-                beta = float(1-omega**2)
+                if betas is None:
+                    beta = float(1-omega**2)
+                else:
+                    beta = betas[pid]
             else:
                 beta = 0
             # print(alpha, beta)
