@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
 <h1>Magnet: We Never Know How Text-to-Image Diffusion Models Work, Until We Learn How Vision-Language Models Function</h1>
 
 [Chenyi Zhuang](https://chenyi-zhuang.github.io/), Ying Hu, Pan Gao
@@ -12,7 +12,7 @@
 <img src="./figures/magnet_workflow.jpg" width="800px">
 
 ### 🌟 Key Features
-1. Analyze and explore the CLIP text encoder in depth, highlighting the contextual issue of padding embeddings.
+1. In-depth analysis and exploration of the CLIP text encoder, highlighting the context issue of padding embeddings;
 2. Improve text alignment by applying positive and negative binding vectors on object embeddings, with negligible cost.
 3. Plug-and-play to various T2I models and controlling methods, e.g., ControlNet.
 
