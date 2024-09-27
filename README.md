@@ -49,6 +49,9 @@ Integrate Magnet into other T2I pipelines and T2I controlling modules:
 ### 😿 Limitations
 Magnet's performance is largely dependent on the pre-trained T2I model. It may not provide meaningful modifications due to the limited power of text-based manipulation alone. You can manually adjust the prompt, seed, or hyperparameters, and combine other techniques to get a better result if you are not satisfied with the output.
 
+### 🌊 Acknowledgements
+Most prompts are based on datasets obtained from [Structure Diffusion](https://github.com/weixi-feng/Structured-Diffusion-Guidance). We also refer to some excellent demos and repos, including [Prompt-to-Prompt](https://github.com/google/prompt-to-prompt) and [ControlNet](https://github.com/lllyasviel/ControlNet).
+
 ## TODO
 - [x] Release the source code and model.
 - [x] Extend to more T2I models.
