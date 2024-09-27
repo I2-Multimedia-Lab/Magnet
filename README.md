@@ -46,8 +46,8 @@ Integrate Magnet into other T2I pipelines and T2I controlling modules:
 
 <img src="./figures/qualitative_extention.jpg" width="800px">
 
-### Limitations
-Magnet inherits the weakness of the pre-trained T2I model and may not provide meaningful modifications due to the limited power of text manipulation. You can manually adjust the prompt/seed or combine other techniques to get a better result if you are not satisfied with the output.
+### 😿 Limitations
+Magnet's performance is largely dependent on the pre-trained T2I model. It may not provide meaningful modifications due to the limited power of text-based manipulation alone. You can manually adjust the prompt, seed, or hyperparameters, and combine other techniques to get a better result if you are not satisfied with the output.
 
 ## TODO
 - [x] Release the source code and model.
