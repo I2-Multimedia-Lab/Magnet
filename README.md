@@ -38,7 +38,9 @@ We provide cross-attention visualization in ``visualize_attention.ipynb``.
 Feel free to explore Magnet and leave any questions in this repo!
 
 ### 😺 Examples
+Compare to state-of-the-art approaches:
 <img src="./figures/qualitative.jpg" width="800px">
+Integrate Magnet into other T2I pipelines and T2I controlling modules:
 <img src="./figures/qualitative_extention.jpg" width="800px">
 
 ## TODO
