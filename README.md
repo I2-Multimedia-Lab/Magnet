@@ -50,7 +50,6 @@ python run_with_controlnet.py --sd_path path-to-stable-diffusion-v1-5 --magnet_p
 
 We also provide ```run_vanilla_pipeline.py``` to use magnet via the ```prompt_embeds``` argument in the standard ```StableDiffusionPipeline```. 
 
-
 Demos of cross-attention visualization are in ``visualize_attention.ipynb``.
 
 <p><B>Feel free to explore Magnet and leave any questions in this repo!</B></p>
