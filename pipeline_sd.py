@@ -66,6 +66,7 @@ class MagnetSDPipeline(StableDiffusionPipeline):
             # print('Extracted Dependency : \n', pairs)
 
         prompt_embeds, eid = self.get_prompt_embeds_with_eid(prompt)
+        self.candidate_embs.type_as(prompt_embeds)
 
         # print(alphas, betas)
         N_pairs = len(pairs)
@@ -78,7 +79,7 @@ class MagnetSDPipeline(StableDiffusionPipeline):
             cur_concept_index = get_word_inds(prompt, cur_span, tokenizer=self.tokenizer, text_inds=text_inds)
 
             concept_embeds, concept_eid = self.get_prompt_embeds_with_eid(pair['concept'])
-            omega = F.cosine_similarity(concept_embeds[:, concept_eid+sd_2].detach().cpu().float(), concept_embeds[:, -1].detach().cpu().float())
+            omega = F.cosine_similarity(concept_embeds[:, concept_eid+sd_2], concept_embeds[:, -1])
 
             if use_pos:
                 if alphas is None:
