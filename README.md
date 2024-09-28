@@ -31,7 +31,7 @@ If you are curious about how different types of text embedding influence generat
 
 Download the pre-trained [SD V1.4](https://huggingface.co/CompVis/stable-diffusion-v1-4),  [SD V1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5) (unfortunately now 404), [SD V2](https://huggingface.co/stabilityai/stable-diffusion-2-base), [SD V2.1](https://huggingface.co/stabilityai/stable-diffusion-2-1-base), or [SDXL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0).
 
-```python
+```bash
 # Run magnet on SD V1.4
 python run.py --sd_path path-to-stable-diffusion-v1-4 --magnet_path bank/candidates_1_4.pt --N 2 --run_sd
 
