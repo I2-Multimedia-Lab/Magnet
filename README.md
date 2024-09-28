@@ -33,24 +33,27 @@ Download the pre-trained [SD V1.4](https://huggingface.co/CompVis/stable-diffusi
 
 ```python
 # Run magnet on SD V1.4
-python run.py --sd_path path-to-stable-diffusion-v1-4 --magnet_path ./bank/candidates_1_4.pt --N 2 --run_sd
+python run.py --sd_path path-to-stable-diffusion-v1-4 --magnet_path bank/candidates_1_4.pt --N 2 --run_sd
 
 # Run magnet on SDXL
-python run.py --sd_path path-to-stable-diffusion-xl --magnet_path ./bank/candidates_sdxl.pt --N 2 --run_sd
-```
+python run.py --sd_path path-to-stable-diffusion-xl --magnet_path bank/candidates_sdxl.pt --N 2 --run_sd
 
-Remove the ``run_sd`` argument if you don't want the standard model run.
+# Remove the "run_sd" argument if you don't want the standard model run
+```
 
 You can also try [ControlNet](https://huggingface.co/lllyasviel/sd-controlnet-depth) conditioned on Depth estimation [DPT-Large](https://huggingface.co/Intel/dpt-large).
 
 ```python
 # Run magnet with ControlNet
-python run.py --sd_path path-to-stable-diffusion-v1-5 --magnet_path ./bank/candidates_1_4.pt --N 2 --run_sd
+python run_with_controlnet.py --sd_path path-to-stable-diffusion-v1-5 --magnet_path bank/candidates_1_5.pt --N 2 --controlnet_path path-to-sd-controlnet-depth --dpt_path path-to-dpt-large --run_sd
 ```
 
-We provide cross-attention visualization in ``visualize_attention.ipynb``.
+We also provide ```run_vanilla_pipeline.py``` to use magnet via the ```prompt_embeds``` argument in the standard ```StableDiffusionPipeline```. 
 
-Feel free to explore Magnet and leave any questions in this repo!
+
+Demos of cross-attention visualization are in ``visualize_attention.ipynb``.
+
+<p><B>Feel free to explore Magnet and leave any questions in this repo!</B></p>
 
 ### 😺 Examples
 Compare to state-of-the-art approaches:
