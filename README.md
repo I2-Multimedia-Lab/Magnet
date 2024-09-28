@@ -43,7 +43,7 @@ python run.py --sd_path path-to-stable-diffusion-xl --magnet_path bank/candidate
 
 You can also try [ControlNet](https://huggingface.co/lllyasviel/sd-controlnet-depth) conditioned on Depth estimation [DPT-Large](https://huggingface.co/Intel/dpt-large).
 
-```python
+```bash
 # Run magnet with ControlNet
 python run_with_controlnet.py --sd_path path-to-stable-diffusion-v1-5 --magnet_path bank/candidates_1_5.pt --N 2 --controlnet_path path-to-sd-controlnet-depth --dpt_path path-to-dpt-large --run_sd
 ```
