@@ -91,7 +91,7 @@ if __name__ == '__main__':
     parser.add_argument('--magnet_path', type=str, 
                         help='Path to the local file of the candidate embedding to save time.'
                         )
-    parser.add_argument('--prompts', type=list, default=None,
+    parser.add_argument('--prompts', nargs='+', default=None,
                         help='Prompt list to generate a batch of images.')
     
     # Magnet settings
