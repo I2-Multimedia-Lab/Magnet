@@ -51,8 +51,7 @@ class MagnetSDPipeline(StableDiffusionPipeline):
         alpha_lambda=0.6,
         use_neg=True,
         use_pos=True,
-        neighbor="feature",
-        sd_2=False
+        neighbor="feature"
     ):
         assert len(self.candidates) == self.candidate_embs.shape[0]
 
@@ -79,7 +78,7 @@ class MagnetSDPipeline(StableDiffusionPipeline):
             cur_concept_index = get_word_inds(prompt, cur_span, tokenizer=self.tokenizer, text_inds=text_inds)
 
             concept_embeds, concept_eid = self.get_prompt_embeds_with_eid(pair['concept'])
-            omega = F.cosine_similarity(concept_embeds[:, concept_eid+sd_2], concept_embeds[:, -1])
+            omega = F.cosine_similarity(concept_embeds[:, concept_eid], concept_embeds[:, -1])
 
             if use_pos:
                 if alphas is None:
