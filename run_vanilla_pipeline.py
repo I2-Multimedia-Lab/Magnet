@@ -53,7 +53,7 @@ def main(opt):
                             prompt, 
                             candidates,
                             candidate_embs,
-                            alpha_lambda=opt.L, neighbor="feature", K=opt.K
+                            alpha_lambda=opt.L, K=opt.K, neighbor="feature"
                         )
                 except:
                     print(f"Fail to apply Magnet at prompt: {prompt}")
