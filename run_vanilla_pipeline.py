@@ -25,9 +25,7 @@ def main(opt):
     candidates, candidate_embs = prepare_candidates(offline_file=opt.magnet_path)
     candidates = candidates.to(device)
     candidate_embs = candidate_embs.to(device)
-
-    SD_2 = True if "2" in opt.sd_path else False
-
+    
     output_path = "outputs"
     os.makedirs(output_path, exist_ok=True)
 
@@ -55,7 +53,7 @@ def main(opt):
                             prompt, 
                             candidates,
                             candidate_embs,
-                            alpha_lambda=opt.L, neighbor="feature", K=opt.K, sd_2=SD_2
+                            alpha_lambda=opt.L, neighbor="feature", K=opt.K
                         )
                 except:
                     print(f"Fail to apply Magnet at prompt: {prompt}")
