@@ -51,8 +51,6 @@ def main(opt):
 
     pipe.prepare_candidates(offline_file=opt.magnet_path)
 
-    SD_2 = True if "2" in opt.sd_path else False
-
     output_path = "outputs"
     os.makedirs(output_path, exist_ok=True)
 
@@ -71,7 +69,7 @@ def main(opt):
             if METHOD == "magnet":
                 try:
                     with torch.no_grad():
-                        pipe.get_magnet_direction(prompt, alpha_lambda=opt.L, K=opt.K, neighbor="feature", sd_2=SD_2)
+                        pipe.get_magnet_direction(prompt, alpha_lambda=opt.L, K=opt.K, neighbor="feature")
                 except:
                     print(f"Fail to apply Magnet at prompt: {prompt}")
                     break
