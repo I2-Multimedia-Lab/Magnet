@@ -6,7 +6,7 @@
 
 [I2ML](https://i2-multimedia-lab.github.io/), Nanjing University of Aeronautics and Astronautics
 
-[Paper]()
+[Paper](https://arxiv.org/abs/2409.19967)
 
 <p><B>We propose Magnet, a training-free approach that improves attribute binding by manipulating object embeddings, enhancing disentanglement within the textual space.</B></p>
 <img src="./figures/magnet_workflow.jpg" width="800px">
