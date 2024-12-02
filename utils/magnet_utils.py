@@ -19,6 +19,8 @@ def check_prompt(text: str):
             output += [word.replace('.', ' .')]
         elif '\'' in word and word != '\'':
             output += [word.replace('\'', ' \'')]
+        elif '-' in word and word != '-':
+            output += [word.replace('-', ' - ')]
         else:
             output += [word]
     return ' '.join(output)
